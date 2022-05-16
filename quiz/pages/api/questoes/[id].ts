@@ -1,9 +1,6 @@
-// eslint-disable-next-line import/no-anonymous-default-export
+/* eslint-disable import/no-anonymous-default-export */
+import questoes from '../bancoDeQuestoes'
 export default  (req, res) => {
-    res.status(200).json(
-        { 
-            id: +req.query.id,
-            name: 'John Doe' 
-        }
-    )
+
+    res.status(200).json(questoes[0])
 }
