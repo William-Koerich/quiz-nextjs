@@ -1,19 +1,13 @@
-/* eslint-disable import/no-anonymous-default-export */
 import questoes from '../bancoDeQuestoes'
-export default  (req, res) => {
-    const  id = +req.query.id
+export default function questoesProId(req, res) {
+    const idSelecionado = +req.query.id
 
-    const questoesSelecionadas = questoes.filter(questao => questao.id === id)
+    const unicaQuestaoOuNada = questoes.filter(questao => questao.id === idSelecionado)
 
-    if(questoesSelecionadas.length === 1) {
-        const questao = questoesSelecionadas[0].embaralharRespostas()
-        const objeto = questao.converterParaObjeto()
-        res.status(200).json(objeto)
+    if (unicaQuestaoOuNada.length === 1) {
+        const questaoSelecionada = unicaQuestaoOuNada[0].embaralharRespostas()
+        res.status(200).json(questaoSelecionada.paraObjeto())
     } else {
         res.status(204).send()
     }
-
-    
-
-    res.status(200).json(questoes[0].converterParaObjeto())
 }

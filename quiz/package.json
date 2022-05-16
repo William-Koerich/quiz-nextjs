@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "next": "11.0.0",
+    "react": "17.0.2",
+    "react-countdown-circle-timer": "^2.5.3",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/react": "^18.0.9",
-    "eslint": "8.15.0",
-    "eslint-config-next": "12.1.6",
-    "typescript": "^4.6.4"
+    "@types/react": "^17.0.11",
+    "eslint": "7.28.0",
+    "eslint-config-next": "11.0.0"
   }
 }

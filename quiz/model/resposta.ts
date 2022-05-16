@@ -12,7 +12,7 @@ export default class RespostaModel {
     static certa(valor: string) {
         return new RespostaModel(valor, true)
     }
-
+    
     static errada(valor: string) {
         return new RespostaModel(valor, false)
     }
@@ -24,20 +24,24 @@ export default class RespostaModel {
     get certa() {
         return this.#certa
     }
-
+    
     get revelada() {
         return this.#revelada
     }
 
     revelar() {
-        return new RespostaModel(this.valor, this.certa, true)
+        return new RespostaModel(this.#valor, this.#certa, true)
     }
 
-    converterParaObjeto() {
+    static criarUsandoObjeto(obj: RespostaModel): RespostaModel {
+        return new RespostaModel(obj.valor, obj.certa, obj.revelada)
+    }
+
+    paraObjeto() {
         return {
-            valor: this.valor,
-            certa: this.certa,
-            revelada: this.revelada,
+            valor: this.#valor,
+            certa: this.#certa,
+            revelada: this.#revelada
         }
     }
 }
